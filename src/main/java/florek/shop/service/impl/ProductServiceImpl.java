@@ -16,4 +16,8 @@ public class ProductServiceImpl implements ProductService {
 	public List<Product> getAllProducts() {
 		return productRepostiory.getAllProducts();
 	}
+
+	public List<Product> getProductsByCategory(String category) {
+		return productRepostiory.getProductsByCategory(category);
+	}
 }
