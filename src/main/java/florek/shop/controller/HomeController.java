@@ -1,4 +1,4 @@
-package com.packt.webstore.Controller;
+package florek.shop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
