@@ -38,4 +38,8 @@ public class ProductServiceImpl implements ProductService {
 	) {
 		return productRepostiory.getProductsByPriceAndManufacturerAndCategory(filterParams, manufacturer, category);
 	}
+
+	public void addProduct(Product product) {
+		productRepostiory.addProduct(product);
+	}
 }

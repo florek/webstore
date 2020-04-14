@@ -16,4 +16,5 @@ public interface ProductService {
 		String manufacturer, 
 		String category
 	);
+	public void addProduct(Product product);
 }

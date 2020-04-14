@@ -19,4 +19,5 @@ public interface ProductRepository {
 		String manufacturer,
 		String category
 	);
+	public void addProduct(Product product);
 }
