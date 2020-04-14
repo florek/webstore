@@ -36,6 +36,24 @@ public class ProductController {
 		return modelAndView;
 	}
 	
+	@RequestMapping("/{category}/{price}")
+	public String filterProducts(
+			Model model, @PathVariable("category") String productCategory, 
+			@MatrixVariable(pathVar="price") Map<String, List<String>> priceParams, 
+			@RequestParam("manufacturer") String manufacturer
+	) {
+		model.addAttribute(
+			"products", 
+			productService.getProductsByPriceAndManufacturerAndCategory(
+				priceParams, 
+				manufacturer, 
+				productCategory
+			)
+		);
+		
+		return "products";
+	}
+	
 	@RequestMapping("/{category}")
 	public String getProductsByCategory(Model model, @PathVariable("category") String productCategory) {
 		model.addAttribute("products", productService.getProductsByCategory(productCategory));
@@ -43,13 +61,17 @@ public class ProductController {
 		return "products";
 	}
 	
-	@RequestMapping("filter/{ByCriteria}")
-	public String getProductsByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String, List<String>> filterParams, Model model) {
+	@RequestMapping("/filter/{ByCriteria}")
+	public String getProductsByFilter(
+		@MatrixVariable(pathVar="ByCriteria") Map<String, List<String>> filterParams, 
+		Model model
+	) {
 		model.addAttribute("products", productService.getProductsByFilter(filterParams));
 		
 		return "products";
 	}
 	
+	@RequestMapping("/product")
 	public String getProductById(@RequestParam("id") String productId, Model model) {
 		model.addAttribute("product", productService.getProductById(productId));
 		

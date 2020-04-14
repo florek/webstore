@@ -17,6 +17,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 		customers.add(new Customer(3, "Jan Nowak"));
 		
 		Customer loyalCustomer = new Customer(4, "Josh Nephew");
+		
 		loyalCustomer.setAddress("Manhattan, Nowy Jork");
 		loyalCustomer.setNoOfOrdersMade(1231);
 		

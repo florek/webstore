@@ -7,8 +7,16 @@ import java.util.Set;
 import florek.shop.domain.Product;
 
 public interface ProductRepository {
-	List<Product> getAllProducts();
-	List<Product> getProductsByCategory(String category);
-	Product getProductById(String productId);
-	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
+	public static String HIGH = "high";
+	public static String LOW = "low";
+	
+	public List<Product> getAllProducts();
+	public List<Product> getProductsByCategory(String category);
+	public Product getProductById(String productId);
+	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
+	public Set<Product> getProductsByPriceAndManufacturerAndCategory(
+		Map<String, List<String>> filterParams, 
+		String manufacturer,
+		String category
+	);
 }
