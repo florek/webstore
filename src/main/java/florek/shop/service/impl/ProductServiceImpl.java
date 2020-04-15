@@ -12,34 +12,31 @@ import florek.shop.service.ProductService;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	@Autowired
-	private ProductRepository productRepostiory;
-	
-	public List<Product> getAllProducts() {
-		return productRepostiory.getAllProducts();
-	}
+    @Autowired
+    private ProductRepository productRepostiory;
 
-	public List<Product> getProductsByCategory(String category) {
-		return productRepostiory.getProductsByCategory(category);
-	}
+    public List<Product> getAllProducts() {
+	return productRepostiory.getAllProducts();
+    }
 
-	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
-		return productRepostiory.getProductsByFilter(filterParams);
-	}
+    public List<Product> getProductsByCategory(String category) {
+	return productRepostiory.getProductsByCategory(category);
+    }
 
-	public Product getProductById(String productId) {
-		return productRepostiory.getProductById(productId);
-	}
+    public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
+	return productRepostiory.getProductsByFilter(filterParams);
+    }
 
-	public Set<Product> getProductsByPriceAndManufacturerAndCategory(
-		Map<String, List<String>> filterParams, 
-		String manufacturer, 
-		String category
-	) {
-		return productRepostiory.getProductsByPriceAndManufacturerAndCategory(filterParams, manufacturer, category);
-	}
+    public Product getProductById(String productId) {
+	return productRepostiory.getProductById(productId);
+    }
 
-	public void addProduct(Product product) {
-		productRepostiory.addProduct(product);
-	}
+    public Set<Product> getProductsByPriceAndManufacturerAndCategory(Map<String, List<String>> filterParams,
+	    String manufacturer, String category) {
+	return productRepostiory.getProductsByPriceAndManufacturerAndCategory(filterParams, manufacturer, category);
+    }
+
+    public void addProduct(Product product) {
+	productRepostiory.addProduct(product);
+    }
 }

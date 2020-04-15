@@ -5,5 +5,5 @@ import java.util.List;
 import florek.shop.domain.Customer;
 
 public interface CustomerRepository {
-	List<Customer> getAllCustomers();
+    List<Customer> getAllCustomers();
 }

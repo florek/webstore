@@ -10,10 +10,10 @@ import florek.shop.service.CustomerService;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-	@Autowired
-	private CustomerRepository customerRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
-	public List<Customer> getAllCustomers() {
-		return customerRepository.getAllCustomers();
-	}
+    public List<Customer> getAllCustomers() {
+	return customerRepository.getAllCustomers();
+    }
 }
